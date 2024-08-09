@@ -36,7 +36,7 @@ Django is a robust and powerful framework with many moving parts. While starting
 
 ### Handling Static Files
 
-- Managing static files (CSS, JavaScript, images)
+- Managing static files (Using Bootstrap)
 - Configuring static file settings in Django
 - Serving static files during development and production
 
