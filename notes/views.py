@@ -7,7 +7,7 @@ from django.views.generic import CreateView, DetailView, ListView, UpdateView
 from django.views.generic.edit import DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-from .forms import Notesform
+from .forms import NotesForm
 from .models import Notes
 
 class NotesDeleteView(DeleteView):
@@ -18,13 +18,13 @@ class NotesDeleteView(DeleteView):
 class NotesUpdateView(UpdateView):
     model = Notes
     success_url = '/smart/notes'
-    form_class = Notesform
+    form_class = NotesForm
     template_name = '/home/alok/Desktop/smartnotes/notes/templates/notes_form.html'
 
 class NotesCreateView(LoginRequiredMixin, CreateView):
     model = Notes
     success_url = '/smart/notes'
-    form_class = Notesform
+    form_class = NotesForm
     template_name = '/home/alok/Desktop/smartnotes/notes/templates/notes_form.html'
     
     def form_valid(self, form):

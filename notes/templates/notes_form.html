@@ -1,17 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="container">
+    <h1 class="my-5">{{ form.instance.pk|yesno:"Edit Note,Create New Note" }}</h1>
     <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="btn btn-primary my-5">Submit</button>
+        <button type="submit" class="btn btn-secondary">Submit</button>
     </form>
-
-    {% if form.errors %}
-        <div class="alert alert-danger my-5">
-            {{ form.errors.title.as_text }}
-        </div>
-    {% endif %}
-
-    <a href="{% url 'notes.list' %}" class="btn btn-secondary">Cancel</a>
+</div>
 {% endblock %}
